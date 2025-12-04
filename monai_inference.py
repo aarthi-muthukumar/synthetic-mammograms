@@ -46,7 +46,7 @@ for mask_path in bbox_mask_paths:
     mri_path = os.path.join(mri_base_path, f"{base_name}_generated.png")
 
     if not os.path.exists(mri_path):
-        print(f"⚠️ MRI image not found: {mri_path}")
+        print(f"MRI image not found: {mri_path}")
         continue
 
     mri = cv2.imread(mri_path, cv2.IMREAD_GRAYSCALE)
@@ -56,7 +56,7 @@ for mask_path in bbox_mask_paths:
     ys, xs = np.where(green_mask)
 
     if len(xs) == 0 or len(ys) == 0:
-        print(f"❌ No bbox found in: {fname}")
+        print(f"No bbox found in: {fname}")
         continue
 
     xmin, xmax = xs.min(), xs.max()
